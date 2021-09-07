@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import HornedBeast from './HornedBeast'
-import data from '../data.json'
 
 export class Main extends Component {
 
@@ -10,18 +9,22 @@ export class Main extends Component {
     //             vote:0,
     //     }
     // }
-    
-    
+
+    // data = this.props.data ; --> ??? why its tell me unefined ?
+
     render() {
  
         return (
             <>
             {
 
-               data.map(item=>{
-                   return <HornedBeast name={item.title} src={item.image_url} description= {item.description} />
+            this.props.aniamArr.map(item=>{
+                   return <HornedBeast name={item.title} src={item.image_url} description= {item.description} clickOn={this.props.clickOn}/>
                 })    
             }  
+            {
+                console.log(this.props.isClicked)
+            }
             </>
         )
     }
