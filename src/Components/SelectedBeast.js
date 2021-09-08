@@ -23,7 +23,7 @@ export class SelectedBeast extends Component {
                     <img src={this.props.src} />
 
                     <p>
-                        I                {this.props.description}
+                      {this.props.description}
 
                     </p>
                 </Modal.Body>
